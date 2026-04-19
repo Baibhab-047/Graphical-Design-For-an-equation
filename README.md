@@ -16,7 +16,7 @@ A high-performance 2D graphing tool built with **Python**, **Pygame**, and **Num
 
 ##  Module
 I have added the module file for using graphical viewing in your program. You can use the following functions in this module(For more info watch out for the Dummy_Script file):
-* **Importing** Use `from Module import Grapher` at the top while making sure that your script and the module are in the same folder and dont forget to set a variable `{name_of_your_variable}=Grapher(WIDTH, HEIGHT)
+* **Importing** Use `from Module import Grapher` at the top while making sure that your script and the module are in the same folder and dont forget to set a variable `{name_of_your_variable}=Grapher(WIDTH, HEIGHT)`
 * **Movement of Graph** Use the events or the mouse inputs to zoom in, zoom out or move the graph ; syntax: `{name_of_your_variable}.movement(event)`
 * **Conversion(Main Function)** Uses high level culling so your graph doesnt freeze and converts your math coordinates into screen coordinates using several numpy calculations making sure it filters/masks non-finite values
 * **Drawing the Graphical Grid** Use the `{name_of_your_variable}.draw_grid(surface)` to draw the graphical grid. This uses modulo and a few numpy vectorizations.

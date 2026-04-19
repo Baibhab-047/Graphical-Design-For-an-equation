@@ -10,6 +10,7 @@ class Grapher:
         self.origin_y=height//2
         self.scale=scale
         self.points=np.array([])
+        self.draw=True
         self.font=pg.font.SysFont('Bahnschrift', 20)
 
     def draw_grid(self, surface):
@@ -33,28 +34,39 @@ class Grapher:
             if mouse[0]:
                 self.origin_x+=event.rel[0]
                 self.origin_y+=event.rel[1]
+                self.draw=True
         elif event.type == pg.MOUSEWHEEL:
             if event.y>0: self.scale+=5
             elif event.y<0: self.scale-=5
             self.scale=max(5, (min(self.scale, 500)))
+            self.draw=True
 
-    def conversion(self, math_x, math_y):
-        l_bound = -self.origin_x / self.scale
-        r_bound = (self.width - self.origin_x) / self.scale
+    def conversion(self, math_x, math_y, buffer):
+        if self.draw:
+            l_bound = -self.origin_x / self.scale - buffer
+            r_bound = (self.width - self.origin_x) / self.scale + buffer
+            u_bound = self.origin_y / self.scale + buffer
+            d_bound = (self.origin_y - self.height) / self.scale - buffer
 
-        view_mask = (math_x >= l_bound - 1) & (math_x <= r_bound + 1)
+            view_mask = (math_x >= l_bound - 1) & (math_x <= r_bound + 1) & (math_y <= u_bound - 1) & (math_y >= d_bound + 1)
 
-        v_x = math_x[view_mask]
-        v_y = math_y[view_mask]
+            v_x = math_x[view_mask]
+            v_y = math_y[view_mask]
 
-        screen_x = self.origin_x + (v_x * self.scale)
-        screen_y = self.origin_y - (v_y * self.scale)
-        mask=np.isfinite(screen_y)
-        self.points=np.column_stack((screen_x[mask], screen_y[mask]))
+            screen_x = self.origin_x + (v_x * self.scale)
+            screen_y = self.origin_y - (v_y * self.scale)
+            mask=np.isfinite(screen_y)
+            self.points=np.column_stack((screen_x[mask], screen_y[mask]))
 
     def rendering(self, surface):
         if self.points.shape[0]>=2:
             pg.draw.aalines(surface, 'red', False, self.points)
+            self.draw=False
+
+
+
+
+
 
 
 

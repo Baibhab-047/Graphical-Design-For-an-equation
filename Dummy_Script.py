@@ -2,7 +2,7 @@ import pygame as pg
 import numpy as np
 import sympy as sp
 import sys
-from Dummy import Grapher
+from Module import Grapher
 
 
 pg.init()

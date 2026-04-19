@@ -22,21 +22,6 @@ I have added the module file for using graphical viewing in your program. You ca
 * **Drawing the Graphical Grid** Use the `{name_of_your_variable}.draw_grid(surface)` to draw the graphical grid. This uses modulo and a few numpy vectorizations.
 * **Rendering the Equation** Use the `{name of your variable}.rendering(screen)` to render the equation in your grid. This uses pygame's anti-aliasing line line drawing features.
 
-Start example:
-`# Quick Start Example
-from Module import Grapher
-import numpy as np
-
- #setting up the equations, width and height
-plot = Grapher(800, 800)
-x_math = np.linspace(-10, 10, 1000)
-y_math = x_math ** 2
-
- #In your loop:
-plot.conversion(x_math, y_math)
-plot.draw_grid(screen)
-plot.rendering(screen)`
-
 This program can handle millions of points using the culling system with freezing, crashing, or lagging.
 PROOF is in the dummy script file
 

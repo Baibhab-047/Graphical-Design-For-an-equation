@@ -8,7 +8,6 @@ A high-performance 2D graphing tool built with **Python**, **Pygame**, and **Num
 * **Real-time Parsing:** Enter equations like `sin(x) * x` or `x^2` and see them instantly.
 * **Vectorized Math:** Uses NumPy for $N \times 2$ array processing, making it capable of handling thousands of points without lag.
 * **Interactive UI:** Supports zooming with the scroll wheel and panning by dragging the mouse.
-* **Object-Oriented:** Built as a reusable Class so you can drop it into any Pygame project.
 
 ##  Installation
 1. Install the dependencies:

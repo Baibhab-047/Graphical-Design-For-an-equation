@@ -14,7 +14,7 @@ clock = pg.time.Clock()
 my_plot=Grapher(WIDTH, HEIGHT)
 x=sp.symbols('x')
 equation=x**4 + x**3 + x**2 + x + 1
-math_x=np.linspace(-1000, 1000, 1000001)
+math_x=np.linspace(-1000, 1000, 100000)
 fast_function=sp.lambdify(x, equation, modules=['numpy'])
 math_y=fast_function(math_x)
 

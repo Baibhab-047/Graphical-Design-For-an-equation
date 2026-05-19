@@ -1,5 +1,4 @@
-# Graphical-Design-For-an-equation
-Hi, I am a 14 year old programmer( or a coder you can say) , As you can see I have made a graph plotting software for simple or maybe a little complex equation that you give. Please try this file out. I made this out of boredom. It uses numpy vectorization, and several sympy functions such implicit_multiplication, etc.
+
 # Ultra-Fast Graphical Representation Engine
 
 A high-performance 2D graphing tool built with **Python**, **Pygame**, and **NumPy**. This project uses **SymPy** to parse complex mathematical equations and vectorizes the coordinates for smooth, real-time rendering.
